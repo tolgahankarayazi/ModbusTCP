@@ -29,18 +29,21 @@ while True:
         # IW0 to IW1022 --> data adress: 30001 to 30512
         # IW0 --> data address: 30001           IW2 --> data adress: 30003        IW1 --> data adress: 30002        
         # IWr --> data adress: r + 30001
-
-        r = 8 # register number must be an even number to prevent overwriting a memory address!
+        r = 20 # register number must be a non - negative number!
         if r % 2 != 0 or r < 0:
             sys.stderr.write('Enter an even register number!\n')
             sys.stderr.flush()
-            time.sleep(3)
+            time.sleep(1)
+            print('This window is closing....')
+            time.sleep(2)
             sys.exit()
-        nbr_of_regs = -3 # number of registers to be read  !!! MINIMUM = 1
+        nbr_of_regs = 15 # number of registers to be read  !!! MINIMUM = 1
         if nbr_of_regs < 0:
             sys.stderr.write('The number of registers to be read can not be a negative number!\n')
             sys.stderr.flush()
-            time.sleep(3)
+            time.sleep(1)
+            print('This window is closing....')
+            time.sleep(2)
             sys.exit()
 
         initial_addr = r + 30001

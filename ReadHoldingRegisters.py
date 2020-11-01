@@ -29,13 +29,13 @@ while True:
         # for Siemens s7 1200 or 1500 PLC series create a holding register database that consist of array of word(or smt else) and connect it to the MB_Server_DB 
         # this code queries the value of the holding_reg_database.data[r]
         # for different PLCs think as same logic; use the holding regs database attended into the Modbus Server Function block of your main code block
-        r = 0 # register number must be a positive number!
+        r = 0 # register number must be a non - negative number!
         if  r < 0:
             sys.stderr.write('Enter a positive register number!\n')
             sys.stderr.flush()
             time.sleep(3)
             sys.exit()
-        nbr_of_regs = 20 # number of registers to be read  !!! MINIMUM = 1
+        nbr_of_regs = 13 # number of registers to be read  !!! MINIMUM = 1
         if nbr_of_regs < 1:
             sys.stderr.write('The number of registers to be read can not be a negative number!\n')
             sys.stderr.flush()

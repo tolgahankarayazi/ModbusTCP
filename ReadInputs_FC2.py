@@ -28,13 +28,13 @@ while True:
         # I0.0 to I1023.7 --> data adress: 10001 to 18192
         # I0.0 to I0.7 --> data adress: 10001 to 10008      I1.0 data adress: 10009 
         # Im.n --> data adress: m * 8 + (n+10001)
-        m = 15
-        n = 5
-        length = 6 # number of discrite inputs to be read  !!! MINIMUM = 1
+        m = 2
+        n = 0
+        length = 10 # number of discrite inputs to be read  !!! MINIMUM = 1
         if length < 0 or m < 0 or n < 0:
             sys.stderr.write('Do not enter a negative number!\n')
             sys.stderr.flush()
-            time.sleep(3)
+            time.sleep(10)
             sys.exit()
 
         initial_adr = m * 8 + (n+10001)

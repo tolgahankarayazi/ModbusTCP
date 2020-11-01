@@ -30,13 +30,15 @@ while True:
         # Q0.0 to Q0.7 --> data address: 1 to 8      Q1.0 data address: 9 
         # Qm.n --> data address: m * 8 + (n+1)
         m = 1
-        n = 1
-        length = 3 # number of coils to be read  !!! MINIMUM = 1
+        n = 5
+        length = 11 # number of coils to be read  !!! MINIMUM = 1
         if length < 0 or m < 0 or n < 0:
             sys.stderr.write('Do not enter a negative number!\n')
             sys.stderr.flush()
-            time.sleep(3)
-            sys.exit()
+            time.sleep(1)
+            print('This window is closing....')
+            time.sleep(10)
+            std.close()
 
         initial_addr = m * 8 + (n+1)
         print("Output Coil " + str(initial_addr) + " corresponds to " + "Q" + str(m) + "." + str(n)+ "\n")

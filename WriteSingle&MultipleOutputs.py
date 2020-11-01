@@ -30,21 +30,26 @@ while True:
         # Q0.0 to Q0.7 --> data address: 1 to 8      Q1.0 data address: 9 
         # Qm.n --> data address: m * 8 + (n+1)
         m = 1
-        n = 1
+        n = 5
         if  m < 0 or n < 0:
             sys.stderr.write('Do not enter a negative number!\n')
             sys.stderr.flush()
             time.sleep(3)
             sys.exit()
-        data = [True, False, True]
+        data = [True, False, True, False, True, True, False, False, True, False, True]
         for i in data:
             if i != True and i != False:
                 sys.stderr.write('The data must consist of boolean values: True or False\n')
-                sys.stderr.flush()
-                time.sleep(4)
-                sys.exit()
+                time.sleep(1)
+                print('This window is closing....')
+                time.sleep(2)
+                std.close()
 
         initial_addr = m * 8 + (n+1)
         coils = c.write_multiple_coils(initial_addr - 1, data) # 1 due to the offset
         print("Data has been written to addresses starting from " + "Q" + str(m) + "." + str(n))
+        time.sleep(1)
+        print('This window is closing....')
+        time.sleep(5)
+        std.close()
    
